@@ -272,7 +272,7 @@ def ask(
     return response_message
 
 
-# Loop forever, asking questions and getting answers
+# Loop forever
 while True:
     PODCAST_QUSTION = input("Ask a question: ")
     print(ask(PODCAST_QUSTION))
