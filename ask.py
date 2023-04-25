@@ -151,18 +151,11 @@ def query_message(
     return message + question
 
 
-# Take question as argument from flag -q from command line
 parser = argparse.ArgumentParser()
-parser.add_argument('-q', '--question', type=str, required=True)
 parser.add_argument('-f', '--file', type=str, required=True)
 args = parser.parse_args()
 
-PODCAST_QUSTION = args.question
 PODCAST_FILE = args.file
-
-if not PODCAST_QUSTION:
-    print('Please provide a question as an argument.')
-    sys.exit()
 
 if not PODCAST_FILE:
     print('Please provide a podcast file as an argument.')
@@ -177,7 +170,7 @@ ten_minute_chunk = 10 * 60 * 1000
 
 # Create a directory to store the chunks
 podcast_name = PODCAST_FILE.split('.mp3')[0]
-chunk_dir = f'{podcast_name}-chunks'
+chunk_dir = f'podcasts/{podcast_name}-chunks'
 transcription_status = f'{chunk_dir}/transcription_status.txt'
 
 if not os.path.exists(chunk_dir):
@@ -279,4 +272,7 @@ def ask(
     return response_message
 
 
-print(ask(PODCAST_QUSTION))
+# Loop forever, asking questions and getting answers
+while True:
+    PODCAST_QUSTION = input("Ask a question: ")
+    print(ask(PODCAST_QUSTION))
