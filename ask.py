@@ -225,13 +225,11 @@ if not os.path.exists(EMBEDDINGS_PATH):
     text_strings = []
     text_strings.extend(split_strings_from_subsection(
         text, max_tokens=MAX_TOKENS))
-    print(f"Text split into {len(text_strings)} strings.")
 
     embeddings = []
     for batch_start in range(0, len(text_strings), BATCH_SIZE):
         batch_end = batch_start + BATCH_SIZE
         batch = text_strings[batch_start:batch_end]
-        print(f"Batch {batch_start} to {batch_end-1}")
         response = openai.Embedding.create(model=EMBEDDING_MODEL, input=batch)
         for i, be in enumerate(response["data"]):
             # double check embeddings are in same order as input
