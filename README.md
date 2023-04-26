@@ -4,7 +4,7 @@ PodcastGPT downloads, transcribes, and answers questions on any podcast given a 
 
 ## Prerequisites
 
-1. Install required packages: Run `pip install -r requirements.txt` (Tested on python 3.10.11)
+1. Install required packages: Run `pip install -r requirements.txt` (Working on Python 3.10.11)
 2. Add the [ChromeDriver](https://chromedriver.chromium.org/downloads) to the root of the project folder.
 3. Set the `OPENAI_API_KEY` in your `.bashrc` or `.zshrc` file.
 
@@ -20,11 +20,13 @@ python download.py -u 'https://podcasts.apple.com/gb/podcast/y-combinator/id1236
 
 ### Transcribing and saving embeddings to ask questions
 
-After downloading the podcast, you can transcribe, save the embeddings for retrieval and ask questions to the podcast with `ask.py` using the following command, (this works for any `.mp3` file):
+After downloading the podcast, you can transcribe, generate embeddings for retrieval and ask questions to the podcast with `ask.py` using the following command, (this works for any `.mp3` file):
 
 ```bash
 python ask.py -f The_Students_Guide_To_Becoming_A_Successful_Startup_Founder.mp3
 ```
+
+This will save a copy of the transcript and embeddings of the podcast in its subdirectory i.e. `The_Students_Guide_To_Becoming_A_Successful_Startup_Founder-chunks` in `podcasts` folder at `transcript.txt` and `embeddings.csv` respectively.
 
 ### Example Use:
 

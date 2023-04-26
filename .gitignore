@@ -1,4 +1,3 @@
-/podcasts
-/chromedriver*
+chromedriver*
 *.mp3
 .DS_Store
