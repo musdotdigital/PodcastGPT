@@ -2,7 +2,6 @@ import argparse
 import time
 import requests
 import os
-from urllib.parse import urlparse, unquote
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By

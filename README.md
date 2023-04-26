@@ -4,7 +4,7 @@ PodcastGPT downloads, transcribes, and answers questions on any podcast given a 
 
 ## Prerequisites
 
-1. Install required packages: Run `pip install -r requirements.txt`
+1. Install required packages: Run `pip install -r requirements.txt` (Tested on python 3.10.11)
 2. Add the [ChromeDriver](https://chromedriver.chromium.org/downloads) to the root of the project folder.
 3. Set the `OPENAI_API_KEY` in your `.bashrc` or `.zshrc` file.
 
